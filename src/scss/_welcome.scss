@@ -1,0 +1,107 @@
+@use "mixin" as *;
+@use "variables" as *;
+
+.welcome {
+  background-color: $background;
+  &__wrapper {
+    display: flex;
+  }
+  &__leafblock {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 50%;
+  }
+  &__leaf {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1rem;
+    padding: 5%;
+    width: 50%;
+  }
+
+  &__heading,
+  &__text {
+    max-width: 550px;
+    margin: 0;
+  }
+
+  &__heading {
+    @include font-styles("Inter", normal, 700, 2rem, 111%, #717171);
+  }
+  &__heading-green {
+    color: $green;
+  }
+  &__text {
+    @include font-styles("Inter", normal, 400, 1rem, 175%, #636060);
+  }
+
+  &__button {
+    @include button(border-box, 2px solid #e06733, 10px, 14px 27px);
+    @include font-styles("Inter", normal, 400, 0.8rem, 125%, #000000);
+    justify-self: flex-start;
+  }
+  &__button:hover {
+    background-color: $orange;
+    @include font-styles("Inter", normal, 400, 0.8rem, 125%, #edf2ec);
+  }
+}
+
+@media (max-width: 768px) {
+  .welcome {
+    transition: 0.5s;
+    &__leafblock {
+      order: 2;
+      width: 40%;
+      padding-top: 10%;
+      flex-direction: column;
+    }
+
+    &__content {
+      order: 1;
+      width: 60%;
+    }
+    &__heading {
+      @include font-styles("Inter", normal, 700, 1.75rem, 143%, #717171);
+    }
+
+    &__text {
+      @include font-styles("Inter", normal, 400, 0.8rem, 156%, #636060);
+    }
+    .top150 {
+      margin-top: 150px;
+      transition: 0.3s;
+    }
+  }
+}
+
+@media (max-width: 380px) {
+  .welcome {
+    &__leafblock {
+      display: none;
+    }
+    &__content {
+      width: 100%;
+    }
+    &__heading {
+      @include font-styles("Inter", normal, 700, 1.25rem, 140%, #717171);
+    }
+
+    &__text {
+      @include font-styles("Inter", normal, 400, 0.8rem, 156%, #636060);
+    }
+    &__button {
+      padding: 8px 18px;
+      @include font-styles("Inter", normal, 400, 0.5rem, 200%, #000000);
+    }
+  }
+}

@@ -1,0 +1,104 @@
+@use "variables" as *;
+@use "mixin" as *;
+
+.header {
+  background-color: $background;
+  &__wrapper {
+    padding: 0 60px;
+    .navbar {
+      min-height: 100px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 24px;
+
+      &__menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 60px;
+      }
+      &__branding {
+        background-image: url(../img/logo_vector.svg);
+        background-repeat: no-repeat;
+        background-size: 20px;
+        z-index: 5;
+        padding-left: 22px;
+        @include font-styles("Inika", normal, 400, 0.8rem, 21px, #010201);
+      }
+
+      &__item {
+        @include font-styles("Inika", normal, 400, 0.8rem, 21px, #010201);
+        transition: 0.7s ease;
+
+        &:hover {
+          color: $green;
+        }
+      }
+
+      .burger {
+        display: none;
+        cursor: pointer;
+
+        &__item {
+          display: block;
+          width: 25px;
+          height: 3px;
+          margin: 5px auto;
+          transition: all 0.3s ease-in-out;
+          background-color: $green;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .header {
+      &__wrapper {
+        .navbar {
+          padding: 0;
+          &__menu {
+            position: absolute;
+            left: -100%;
+            top: 100px;
+            gap: 0;
+            flex-direction: column;
+            width: 100%;
+            text-align: center;
+            transition: 0.3s;
+            margin-bottom: 100px;
+
+            &.active {
+              left: 0;
+              padding: 20px 0;
+            }
+          }
+
+          &__item {
+            margin: 16px 0;
+          }
+
+          .burger {
+            display: block;
+            padding: 0;
+            position: relative;
+
+            &.active {
+              .burger__item:nth-child(2) {
+                opacity: 0;
+              }
+
+              .burger__item:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+              }
+
+              .burger__item:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

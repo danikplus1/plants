@@ -1,0 +1,75 @@
+@use "variables" as *;
+
+//Blocks
+@use "header" as header;
+@use "welcome" as welcome;
+@use "about" as about;
+@use "service" as service;
+@use "prices" as prices;
+
+html {
+  font-size: 20px;
+}
+
+body {
+  background-color: $background;
+  padding: 0;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+header {
+  margin: 0;
+  padding: 0;
+  @extend .header;
+}
+
+main {
+  margin: 0;
+  padding: 0;
+  @extend .welcome;
+  @extend .about;
+  @extend .service;
+  @extend .prices;
+}
+
+.header,
+.welcome,
+.about,
+.service,
+.prices {
+  &__wrapper {
+    padding: 0 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header,
+  .welcome,
+  .about,
+  .service,
+  .prices {
+    &__wrapper {
+      padding: 0 30px;
+    }
+  }
+}
+
+@media (max-width: 380px) {
+  .header,
+  .welcome,
+  .about,
+  .service,
+  .prices {
+    &__wrapper {
+      padding: 0 10px;
+    }
+  }
+}

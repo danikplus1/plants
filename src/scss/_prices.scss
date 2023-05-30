@@ -1,0 +1,9 @@
+@use "variables" as *;
+
+.prices {
+  &__wrapper {
+    background-color: $secondary;
+    display: flex;
+    justify-content: space-between;
+  }
+}

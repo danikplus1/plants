@@ -1,0 +1,15 @@
+@mixin font-styles($family, $style, $weight, $size, $line-height, $color) {
+  font-family: $family;
+  font-style: $style;
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $line-height;
+  color: $color;
+}
+
+@mixin button($box-sizing, $border, $border-radius, $padding) {
+  box-sizing: $box-sizing;
+  border: $border;
+  border-radius: $border-radius;
+  padding: $padding;
+}

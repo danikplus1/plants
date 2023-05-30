@@ -1,0 +1,145 @@
+@use "mixin" as *;
+@use "variables" as *;
+
+.service {
+  background-color: $background;
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+  }
+
+  &__content-heading {
+    text-align: center;
+    justify-content: left;
+    @include font-styles("Inika", normal, 400, 2rem, 130%, #499a18);
+  }
+
+  &__btns {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: auto;
+  }
+
+  &__button {
+    width: 100%;
+    margin: 0 10px;
+    @include button(border-box, 1px solid #e06733, 5px, 12px 54px);
+    @include font-styles("Inika", normal, 400, 1rem, 130%, #e06733);
+  }
+  &__button:nth-child(2) {
+    padding-left: 65px;
+    padding-right: 65px;
+  }
+  &__button:hover {
+    background-color: $orange;
+    @include font-styles("Inika", normal, 400, 1rem, 130%, #edf2ec);
+  }
+
+  .card {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto min-content;
+    grid-gap: 20px;
+    justify-items: center;
+    &__item {
+      width: 100%;
+      position: relative;
+      border-radius: 20px 20px 21px 21px;
+    }
+    &__item:before {
+      content: "";
+      display: block;
+      padding-top: 125%;
+    }
+    &__content {
+      background-color: $background;
+      border: 1px solid #e3e1d5;
+      border-radius: 0px 0px 20px 20px;
+    }
+    &__item-name,
+    &__item-text {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    &__item-name {
+      padding-top: 5%;
+      @include font-styles("Inter", normal, 700, 1rem, 100%, #e06733);
+    }
+    &__item-text {
+      padding: 0 5%;
+      @include font-styles("Inter", normal, 400, 0.8rem, 125%, #717171);
+    }
+  }
+
+  .blur {
+    filter: blur(5px);
+  }
+}
+
+@media (max-width: 768px) {
+  .service {
+    &__buttons {
+      flex-direction: column;
+      justify-content: flex-start;
+      width: 100%;
+      margin: 0 10% 10% 10%;
+    }
+
+    &__content-heading {
+      margin-left: 0;
+      width: 100%;
+    }
+    &__btns {
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      gap: 10px;
+    }
+    .card {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 30px;
+    }
+  }
+}
+
+@media (max-width: 380px) {
+  .service {
+    margin: 0 0 10% 0;
+
+    &__button {
+      margin: 0;
+      @include button(border-box, 1px solid #e06733, 5px, 12px 54px);
+      @include font-styles("Inika", normal, 400, 0.75rem, 133%, #e06733);
+    }
+    &__button:nth-child(2) {
+      padding-left: 65px;
+      padding-right: 65px;
+    }
+    &__button:hover {
+      background-color: $orange;
+      @include font-styles("Inika", normal, 400, 0.75rem, 133%, #edf2ec);
+    }
+    &__btns {
+      display: flex;
+      flex-direction: column;
+    }
+    .card {
+      grid-template-columns: repeat(1, 1fr);
+      grid-gap: 10px;
+      padding: 0 auto;
+    }
+  }
+}

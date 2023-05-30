@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Garden care",
+    "text": "Lorem Ipsum has been the industry",
+    "img": "../img/services/garden_care_1.png"
+  },
+  {
+    "title": "Planting",
+    "text": "Lorem Ipsum has been the industry",
+    "img": "../img/services/planting_1.png"
+  },
+  {
+    "title": "Lawn care",
+    "text": "Lorem Ipsum has been the industry",
+    "img": "../img/services/lawn_care.png"
+  },
+  {
+    "title": "Planting",
+    "text": "Lorem Ipsum has been the industry",
+    "img": "../img/services/planting_2.png"
+  },
+  {
+    "title": "Garden care",
+    "text": "Lorem Ipsum has been the industry",
+    "img": "../img/services/garden_care_2.png"
+  },
+  {
+    "title": "Planting",
+    "text": "Lorem Ipsum has been the industry",
+    "img": "../img/services/planting_3.png"
+  }
+]
