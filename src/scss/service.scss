@@ -3,6 +3,7 @@
 
 .service {
   background-color: $background;
+  margin-bottom: 40px;
   &__wrapper {
     display: flex;
     flex-direction: column;

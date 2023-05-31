@@ -1,0 +1,58 @@
+@use "variables" as *;
+@use "mixin" as *;
+
+.footer {
+  background-color: $secondary;
+  padding: 40px 0;
+  @include font-styles("Inter", normal, 400, 1rem, 250%, #000000);
+  &__wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  &__data {
+    display: flex;
+    justify-content: space-around;
+    gap: 0.25rem;
+  }
+  .social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    &__list-item {
+      height: 30px;
+      width: 30px;
+      background-repeat: no-repeat;
+    }
+    .inst {
+      background-size: 25px;
+      background-image: url(../img/footer/inst.svg);
+    }
+    .fb {
+      background-size: 17px 25px;
+      background-image: url(../img/footer/fb.svg);
+    }
+    .twitter {
+      background-size: 30px;
+      background-image: url(../img/footer/twitter.svg);
+    }
+    .pinterest {
+      background-size: 25px;
+      background-image: url(../img/footer/pinterest.svg);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    &__wrapper {
+      flex-direction: column;
+      gap: 0.5rem;
+      @include font-styles("Inter", normal, 400, 1rem, 120%, #000000);
+    }
+    &__data {
+      gap: 0.75rem;
+    }
+  }
+}

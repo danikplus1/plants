@@ -6,6 +6,7 @@
 @use "about" as about;
 @use "service" as service;
 @use "prices" as prices;
+@use "footer" as footer;
 
 html {
   font-size: 20px;
@@ -38,13 +39,15 @@ main {
   @extend .about;
   @extend .service;
   @extend .prices;
+  @extend .footer;
 }
 
 .header,
 .welcome,
 .about,
 .service,
-.prices {
+.prices,
+.footer {
   &__wrapper {
     padding: 0 60px;
   }
@@ -55,7 +58,8 @@ main {
   .welcome,
   .about,
   .service,
-  .prices {
+  .prices,
+  .footer {
     &__wrapper {
       padding: 0 30px;
     }
@@ -67,7 +71,8 @@ main {
   .welcome,
   .about,
   .service,
-  .prices {
+  .prices,
+  .footer {
     &__wrapper {
       padding: 0 10px;
     }

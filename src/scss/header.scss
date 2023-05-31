@@ -60,7 +60,7 @@
           &__menu {
             position: absolute;
             left: -100%;
-            top: 100px;
+            top: 70px;
             gap: 0;
             flex-direction: column;
             width: 100%;
@@ -70,7 +70,7 @@
 
             &.active {
               left: 0;
-              padding: 20px 0;
+              padding: 0;
             }
           }
 
