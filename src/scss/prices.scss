@@ -37,7 +37,7 @@
       @include font-styles("Inter", normal, 700, 1rem, 100%, #000);
       &.active {
         position: relative;
-        min-height: 155px;
+        min-height: 170px;
         background-color: $active-price;
         transition: 0.3s ease-out 0.3s;
         .price__item-name,
@@ -83,7 +83,10 @@
       height: 15px;
       margin-right: 30px;
     }
-    &__item-text {
+    &__item-text,
+    &__item-line,
+    &__item-value,
+    &__item-button {
       opacity: 0;
       transition: opacity 0.5s ease;
       animation: showBlock 0.5s 0.5s forwards;
@@ -97,6 +100,22 @@
       }
     }
 
+    &__item-value {
+      @include font-styles("Inter", normal, 400, 0.7rem, 150%, #000000);
+    }
+    &__item-orange {
+      @include font-styles("Inter", normal, 700, 0.7rem, 150%, $orange);
+    }
+
+    &__item-button {
+      @include font-styles("Inter", normal, 700, 0.7rem, 150%, #717171);
+      @include button(border-box, 0 #e06733, 20px, 3px 20px);
+    }
+    &__item-button:hover {
+      transform: translate(2px, 2px);
+      color: #474646;
+      background-color: #d4d3cf;
+    }
     .arrow {
       position: relative;
       bottom: 6px;
@@ -186,6 +205,12 @@
       align-self: center;
       @include font-styles("Inika", normal, 700, 0.75rem, 130%, $orange);
       @include button(border-box, 1px solid #e06733, 5px, 8px 20px);
+    }
+    &__btn:hover {
+      align-self: center;
+      background-color: $orange;
+      @include font-styles("Inika", normal, 700, 0.75rem, 130%, #edf2ec);
+      @include button(border-box, 1px solid #edf2ec, 5px, 8px 20px);
     }
     &__leaf {
       display: none;

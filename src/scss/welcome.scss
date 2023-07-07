@@ -103,5 +103,10 @@
       padding: 8px 18px;
       @include font-styles("Inter", normal, 400, 0.5rem, 200%, #000000);
     }
+    &__button:hover {
+      padding: 8px 18px;
+      background-color: $orange;
+      @include font-styles("Inter", normal, 400, 0.5rem, 200%, #edf2ec);
+    }
   }
 }
