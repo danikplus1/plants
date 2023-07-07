@@ -176,44 +176,50 @@
       max-width: 85%;
       &__item {
         min-width: 80%;
-      }
-      &__item-name {
-        padding-left: 20px;
-      }
-      &__item-icon {
-        margin-right: 20px;
+        &.active {
+          min-height: 190px;
+        }
+        &__item-name {
+          padding-left: 20px;
+        }
+        &__item-icon {
+          margin-right: 20px;
+        }
       }
     }
   }
-}
 
-@media (max-width: 380px) {
-  .prices {
-    &__wrapper {
-      flex-direction: column;
-    }
+  @media (max-width: 380px) {
+    .prices {
+      &__wrapper {
+        flex-direction: column;
+      }
+      &__block-heading {
+        margin-top: 0;
+      }
 
-    &__content {
-      text-align: center;
-    }
-    &__contact-heading {
-      text-align: center;
-      @include font-styles("Inter", normal, 700, 1rem, 175%, #000);
-    }
+      &__content {
+        text-align: center;
+      }
+      &__contact-heading {
+        text-align: center;
+        @include font-styles("Inter", normal, 700, 1rem, 175%, #000);
+      }
 
-    &__btn {
-      align-self: center;
-      @include font-styles("Inika", normal, 700, 0.75rem, 130%, $orange);
-      @include button(border-box, 1px solid #e06733, 5px, 8px 20px);
-    }
-    &__btn:hover {
-      align-self: center;
-      background-color: $orange;
-      @include font-styles("Inika", normal, 700, 0.75rem, 130%, #edf2ec);
-      @include button(border-box, 1px solid #edf2ec, 5px, 8px 20px);
-    }
-    &__leaf {
-      display: none;
+      &__btn {
+        align-self: center;
+        @include font-styles("Inika", normal, 700, 0.75rem, 130%, $orange);
+        @include button(border-box, 1px solid #e06733, 5px, 8px 20px);
+      }
+      &__btn:hover {
+        align-self: center;
+        background-color: $orange;
+        @include font-styles("Inika", normal, 700, 0.75rem, 130%, #edf2ec);
+        @include button(border-box, 1px solid #edf2ec, 5px, 8px 20px);
+      }
+      &__leaf {
+        display: none;
+      }
     }
   }
 }
