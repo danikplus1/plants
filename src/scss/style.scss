@@ -54,14 +54,18 @@ main {
 }
 
 @media (max-width: 768px) {
-  .header,
-  .welcome,
-  .about,
-  .service,
-  .prices,
-  .footer {
-    &__wrapper {
-      padding: 0 30px;
+  main {
+    margin: 0;
+    padding: 0;
+    .header,
+    .welcome,
+    .about,
+    .service,
+    .prices,
+    .footer {
+      &__wrapper {
+        padding: 0 30px;
+      }
     }
   }
 }
@@ -74,7 +78,7 @@ main {
   .prices,
   .footer {
     &__wrapper {
-      padding: 0 10px;
+      padding: 0 15px;
     }
   }
 }
